@@ -1,5 +1,5 @@
 import { TEndpointHandler } from '../../../types/express.js';
-import UserRepository from './user.repository';
+import UserRepository from './user.repository.js';
 import bcrypt from 'bcrypt';
 
 const userRepo = new UserRepository();

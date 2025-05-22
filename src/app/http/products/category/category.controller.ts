@@ -1,5 +1,5 @@
 import { TEndpointHandler } from '../../../../types/express';
-import ProductCategoryRepository from './category.repository';
+import ProductCategoryRepository from './category.repository.js';
 
 const productCategoryRepo = new ProductCategoryRepository();
 

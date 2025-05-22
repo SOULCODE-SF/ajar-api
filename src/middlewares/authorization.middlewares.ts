@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
-import { APP_SECRET_KEY } from '../libs/config';
+import { APP_SECRET_KEY } from '../libs/config/index.js';
 import { Entity } from '../types/express';
 
 const excludedPaths = [

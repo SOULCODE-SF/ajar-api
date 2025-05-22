@@ -1,4 +1,4 @@
-import { mysqlConnection } from '../../../../libs/config/mysqlConnection';
+import { mysqlConnection } from '../../../../libs/config/mysqlConnection.js';
 
 export default class ProductCategoryRepository {
   async findAll() {

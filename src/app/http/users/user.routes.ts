@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import controller from './user.controller';
-import { endpointHandler } from '../../../libs/config/endpointHandler';
+import controller from './user.controller.js';
+import { endpointHandler } from '../../../libs/config/endpointHandler.js';
 
 const userRouter = Router();
 
