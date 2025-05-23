@@ -1,5 +1,5 @@
 import { TEndpointHandler } from '../../../../types/express';
-import SellerRepository from './seller.repository';
+import SellerRepository from './seller.repository.js';
 
 const sellerRepo = new SellerRepository();
 const fillSellerData: TEndpointHandler = async (req) => {
