@@ -18,3 +18,7 @@ const fillSellerData: TEndpointHandler = async (req) => {
     message: 'Berhasil isi data',
   };
 };
+
+export default {
+  fillSellerData,
+};
