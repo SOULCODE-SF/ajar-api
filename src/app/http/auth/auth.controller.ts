@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import { TEndpointHandler } from '../../../types/express';
-import AuthRepository from './auth.repository';
-import { APP_SECRET_KEY } from '../../../libs/config';
+import AuthRepository from './auth.repository.js';
+import { APP_SECRET_KEY } from '../../../libs/config/index.js';
 
 const authRepo = new AuthRepository();
 

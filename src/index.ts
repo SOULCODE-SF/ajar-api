@@ -1,9 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import morgan from 'morgan';
-import path from 'path';
-import url from 'url';
-import { promises as fs } from 'fs';
 import { mysqlConnection } from './libs/config/mysqlConnection.js';
 import { authorizationMiddleware } from './middlewares/authorization.middlewares.js';
 import httpRouter from './app/http/index.js';
