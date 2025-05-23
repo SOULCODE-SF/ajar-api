@@ -1,6 +1,7 @@
 {
   "name": "ajar-api",
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "build": "tsc",
@@ -15,6 +16,7 @@
     "jsonwebtoken": "^9.0.2",
     "morgan": "^1.10.0",
     "mysql2": "^3.14.1",
+    "nodemailer": "^7.0.3",
     "winston": "^3.17.0"
   },
   "devDependencies": {
@@ -25,6 +27,7 @@
     "@types/jsonwebtoken": "^9.0.9",
     "@types/morgan": "^1.9.9",
     "@types/node": "^20.9.0",
+    "@types/nodemailer": "^6.4.17",
     "@types/winston": "^2.4.4",
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",

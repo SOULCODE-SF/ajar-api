@@ -10,7 +10,7 @@ export default class AuthRepository {
 
     if (!user) throw new Error('Email atau Password salah');
 
-    const isPasswordValid = bcryptHelper.comparePassword(
+    const isPasswordValid = await bcryptHelper.comparePassword(
       password,
       user.password,
     );

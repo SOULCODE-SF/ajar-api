@@ -1,3 +1,6 @@
+import logger from '../../../libs/helpers/logger.js';
+import emailTemplate from '../../../libs/templates/email.template.js';
+import smtp from '../../../shared/services/smtp.service.js';
 import { TEndpointHandler } from '../../../types/express.js';
 import UserRepository from './user.repository.js';
 import bcrypt from 'bcrypt';
@@ -19,6 +22,15 @@ const addUser: TEndpointHandler = async (req) => {
     password: hashedPassword,
     role,
   });
+
+  const sendEmail = await smtp.sendMail({
+    to: email,
+    subject: emailTemplate.welcomeMessage.subject,
+    text: emailTemplate.welcomeMessage.text,
+    html: emailTemplate.welcomeMessage.html.replace('[nama]', name),
+  });
+
+  logger.info(sendEmail);
 
   return {
     statusCode: 201,

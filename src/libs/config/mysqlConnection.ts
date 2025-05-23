@@ -5,6 +5,7 @@ import mysql, {
   ResultSetHeader,
 } from 'mysql2/promise';
 import { mysqlConfig } from './index.js';
+import logger from '../helpers/logger.js';
 
 class MySQLConnection {
   private pool: Pool | null = null;
@@ -22,7 +23,7 @@ class MySQLConnection {
       queueLimit: 0,
     });
 
-    console.log('✅ [MySQL] Pool initialized & ready to connect.');
+    logger.debug('✅ [MySQL] Pool initialized & ready to connect.');
   }
 
   async raw<T = any>(query: string, params?: any[]): Promise<T[]> {

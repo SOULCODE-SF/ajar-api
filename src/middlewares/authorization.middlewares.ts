@@ -7,6 +7,8 @@ const excludedPaths = [
   { path: '/auth/login', method: 'POST' },
   { path: '/auth/register', method: 'POST' },
   { path: '/', method: 'GET' },
+  { path: '/products', method: 'GET' },
+  { path: '/products/category', method: 'GET' },
 ];
 
 export const authorizationMiddleware = (
@@ -31,6 +33,7 @@ export const authorizationMiddleware = (
   try {
     const decoded = jwt.verify(token, APP_SECRET_KEY) as Entity.User;
     req.userData = decoded;
+    req.userId = decoded.id;
     next();
   } catch (err) {
     return res.status(401).json({ message: 'Unauthorized: Invalid token' });

@@ -6,6 +6,7 @@ import { mysqlConnection } from './libs/config/mysqlConnection.js';
 import { authorizationMiddleware } from './middlewares/authorization.middlewares.js';
 import httpRouter from './app/http/index.js';
 import { APP_PORT, mysqlConfig } from './libs/config/index.js';
+import logger from './libs/helpers/logger.js';
 
 dotenv.config();
 
@@ -28,8 +29,7 @@ async function main() {
 
     const PORT = APP_PORT || 3000;
     app.listen(PORT, () => {
-      console.log('config', mysqlConfig);
-      console.log(`🚀 Server running at http://localhost:${PORT}`);
+      logger.debug(`🚀 Server running at http://localhost:${PORT}`);
     });
   } catch (err) {
     console.error('❌ Failed to start server:', err);
