@@ -28,7 +28,7 @@ async function main() {
     });
 
     const PORT = APP_PORT || 3000;
-    app.listen(PORT, () => {
+    app.listen(PORT, '0.0.0.0', () => {
       logger.debug(`🚀 Server running at http://localhost:${PORT}`);
     });
   } catch (err) {
