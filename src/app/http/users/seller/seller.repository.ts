@@ -29,7 +29,7 @@ export default class SellerRepository {
           `UPDATE data_seller SET store_name = ?, address_id = ?, full_address = ? WHERE user_id = ?`,
           [
             payload.store_name,
-            payload.address_id,
+            payload?.address_id || getData.address_id,
             payload.full_address,
             payload.user_id,
           ],
