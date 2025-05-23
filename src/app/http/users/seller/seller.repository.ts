@@ -3,7 +3,17 @@ import { mysqlConnection } from '../../../../libs/config/mysqlConnection.js';
 export default class SellerRepository {
   async getData(userId: number) {
     const [data] = await mysqlConnection.raw(
-      `SELECT * FROM data_seller WHERE user_id = ?`,
+      `SELECT 
+        ds.*,
+        a.province,
+        a.city,
+        a.subdistrict,
+        a.village,
+        a.postal_code 
+      FROM data_seller ds
+      JOIN address a ON a.id = ds.id 
+      WHERE ds.user_id = ?
+      `,
       [userId],
     );
 
