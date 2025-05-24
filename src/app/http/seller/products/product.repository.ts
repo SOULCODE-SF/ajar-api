@@ -1,5 +1,5 @@
 import { ResultSetHeader } from 'mysql2';
-import { mysqlConnection } from '../../../../libs/config/mysqlConnection';
+import { mysqlConnection } from '../../../../libs/config/mysqlConnection.js';
 
 export default class SellerProductRepository {
   async getAll(sellerId: number, keyword?: string) {
