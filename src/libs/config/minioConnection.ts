@@ -1,5 +1,5 @@
 import { Client } from 'minio';
-import { minioConfig } from '.';
+import { minioConfig } from './index.js';
 
 const minioConnection = new Client({
   endPoint: minioConfig.ENDPOINT,
