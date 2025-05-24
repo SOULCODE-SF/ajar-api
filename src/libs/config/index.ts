@@ -20,3 +20,11 @@ export const emailConfig = {
   USER: process.env.EMAIL_USER,
   PASSWORD: process.env.EMAIL_PASSWORD,
 };
+
+export const minioConfig = {
+  ENDPOINT: String(process.env.MINIO_URL),
+  ACCESS_KEY: String(process.env.MINIO_ACCESS_KEY),
+  SECRET_KEY: String(process.env.MINIO_SECRET_KEY),
+  PORT: Number(process.env.MINIO_PORT),
+  BUCKET: String(process.env.MINIO_BUCKET),
+};

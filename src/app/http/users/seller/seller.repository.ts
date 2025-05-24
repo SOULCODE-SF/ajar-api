@@ -11,7 +11,7 @@ export default class SellerRepository {
         a.village,
         a.postal_code 
       FROM data_seller ds
-      JOIN address a ON a.id = ds.id 
+      JOIN address a ON a.id = ds.address_id
       WHERE ds.user_id = ?
       `,
       [userId],
@@ -21,6 +21,7 @@ export default class SellerRepository {
   }
 
   async fillData(payload: User.Seller.ISeller) {
+    console.log(payload);
     await mysqlConnection.transaction(async (trx) => {
       const getData = await this.getData(payload.user_id as number);
 
@@ -29,7 +30,7 @@ export default class SellerRepository {
           `UPDATE data_seller SET store_name = ?, address_id = ?, full_address = ? WHERE user_id = ?`,
           [
             payload.store_name,
-            payload?.address_id || getData.address_id,
+            payload.address_id,
             payload.full_address,
             payload.user_id,
           ],

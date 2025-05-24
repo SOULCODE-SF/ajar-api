@@ -1,3 +1,5 @@
+import { minioConfig } from '../../../libs/config';
+import minioConnection from '../../../libs/config/minioConnection';
 import logger from '../../../libs/helpers/logger';
 import smtp from '../../../shared/services/smtp.service.js';
 import { TEndpointHandler } from '../../../types/express';
@@ -35,6 +37,38 @@ const sendEmail: TEndpointHandler = async (req) => {
   };
 };
 
+const uploadFile: TEndpointHandler = async (req) => {
+  const { file } = req;
+
+  if (!file) {
+    throw new Error('File not found');
+  }
+
+  const bucket = 'ajar';
+  const objectName = Date.now() + '-' + file.originalname;
+
+  const upload = await minioConnection.putObject(
+    bucket,
+    objectName,
+    file.buffer,
+    file.size,
+    {
+      'Content-Type': file.mimetype,
+    },
+  );
+
+  logger.info(upload);
+
+  const fileUrl = `http://${minioConfig.ENDPOINT}:${minioConfig.PORT}/${bucket}/${objectName}`;
+
+  return {
+    statusCode: 200,
+    message: 'File berhasil diupload',
+    result: fileUrl,
+  };
+};
+
 export default {
   sendEmail,
+  uploadFile,
 };

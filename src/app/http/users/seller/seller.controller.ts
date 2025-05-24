@@ -17,13 +17,14 @@ const getCurrentData: TEndpointHandler = async (req) => {
 
 const fillSellerData: TEndpointHandler = async (req) => {
   const user = req.userData;
-  const { storeName, addressId, fullAddress } = req.body;
+  const { store_name, address_id, full_address } = req.body;
+  console.log(req.body);
 
   await sellerRepo.fillData({
     user_id: user?.id,
-    store_name: storeName,
-    address_id: addressId,
-    full_address: fullAddress,
+    store_name,
+    address_id,
+    full_address,
   });
 
   return {
