@@ -6,6 +6,7 @@ import userRouter from './users/user.routes.js';
 import playgroundRouter from './playground/playgorund.routes.js';
 import searchRouter from './search/search.routes.js';
 import sellerRouter from './users/seller/seller.routes.js';
+import sellerRoute from './seller/index.js';
 
 const httpRouter = Router();
 
@@ -16,5 +17,8 @@ httpRouter.use('/users/seller', sellerRouter);
 httpRouter.use('/search', searchRouter);
 httpRouter.use('/products/category', productCategoryRouter);
 httpRouter.use('/playground', playgroundRouter);
+
+//role-based
+httpRouter.use('/seller', sellerRoute);
 
 export default httpRouter;

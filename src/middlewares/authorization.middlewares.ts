@@ -32,6 +32,7 @@ export const authorizationMiddleware = (
 
   try {
     const decoded = jwt.verify(token, APP_SECRET_KEY) as Entity.User;
+
     req.userData = decoded;
     req.userId = decoded.id;
     next();

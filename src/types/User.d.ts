@@ -12,6 +12,7 @@ declare namespace User {
       id?: number;
       user_id?: number;
       store_name: string;
+      description?: string;
       address_id: number;
       full_address: string;
     }

@@ -1,4 +1,4 @@
-declare namespace Data {
+declare namespace Seller {
   interface IAddress {
     id: number;
     province: string;
@@ -14,6 +14,6 @@ declare namespace Data {
     user_id: number;
     store_name: string;
     full_address: string;
-    address: IAddress;
+    address_id: number;
   }
 }
