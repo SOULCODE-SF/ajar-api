@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import productRoutes from './products/product.routes';
-import sellerDataRoute from './data/data.routes';
+import productRoutes from './products/product.routes.js';
+import sellerDataRoute from './data/data.routes.js';
 
 const sellerRoute = Router();
 

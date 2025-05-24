@@ -1,8 +1,8 @@
-import { minioConfig } from '../../../../libs/config';
-import minioConnection from '../../../../libs/config/minioConnection';
+import { minioConfig } from '../../../../libs/config/index.js';
+import minioConnection from '../../../../libs/config/minioConnection.js';
 import { TEndpointHandler } from '../../../../types/express';
-import SellerProductRepository from './product.repository';
-import { TAddProductSeller } from './product.request';
+import SellerProductRepository from './product.repository.js';
+import { TAddProductSeller } from './product.request.js';
 
 const productRepo = new SellerProductRepository();
 

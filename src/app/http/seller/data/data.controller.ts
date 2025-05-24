@@ -1,5 +1,5 @@
 import { TEndpointHandler } from '../../../../types/express';
-import SellerDataRepository from './data.repository';
+import SellerDataRepository from './data.repository.js';
 
 const sellerDataRepo = new SellerDataRepository();
 

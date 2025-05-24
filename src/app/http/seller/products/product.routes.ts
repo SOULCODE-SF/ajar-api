@@ -1,7 +1,7 @@
-import { endpointHandler } from './../../../../libs/config/endpointHandler';
-import { upload } from './../../../../middlewares/upload.middleware';
+import { endpointHandler } from './../../../../libs/config/endpointHandler.js';
+import { upload } from './../../../../middlewares/upload.middleware.js';
 import { Router } from 'express';
-import controller from './product.controller';
+import controller from './product.controller.js';
 
 const router = Router();
 

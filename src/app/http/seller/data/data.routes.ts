@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { endpointHandler } from '../../../../libs/config/endpointHandler';
-import controller from './data.controller';
+import { endpointHandler } from '../../../../libs/config/endpointHandler.js';
+import controller from './data.controller.js';
 
 const sellerDataRoute = Router();
 

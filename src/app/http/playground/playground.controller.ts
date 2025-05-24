@@ -1,6 +1,6 @@
-import { minioConfig } from '../../../libs/config';
-import minioConnection from '../../../libs/config/minioConnection';
-import logger from '../../../libs/helpers/logger';
+import { minioConfig } from '../../../libs/config/index.js';
+import minioConnection from '../../../libs/config/minioConnection.js';
+import logger from '../../../libs/helpers/logger.js';
 import smtp from '../../../shared/services/smtp.service.js';
 import { TEndpointHandler } from '../../../types/express';
 
